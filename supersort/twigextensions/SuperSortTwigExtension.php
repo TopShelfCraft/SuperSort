@@ -103,7 +103,7 @@ class SuperSortTwigExtension extends \Twig_Extension
 				break;
 
 			case 'rsortas':
-				arsort($array, $sortFlag);
+				arsort($asArray, $sortFlag);
 				break;
 
 			case 'sortas':
