@@ -102,6 +102,10 @@ class SuperSortTwigExtension extends \Twig_Extension
 				sort($array, $sortFlag);
 				break;
 
+			case 'shuffle':
+				shuffle($array);
+				break;
+
 			case 'rsortas':
 				arsort($asArray, $sortFlag);
 				break;
