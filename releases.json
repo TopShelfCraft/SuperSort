@@ -1,0 +1,34 @@
+[
+  {
+    "version": "1.2.0",
+    "downloadUrl": "https://github.com/TopShelfCraft/SuperSort/archive/1.2.0.zip",
+    "date": "2016-08-15T22:00:00",
+    "notes": [
+      "[Added] Added Craft 2.5 plugin methods and a spiffy plugin icon."
+    ]
+  },
+  {
+    "version": "1.1.0",
+    "downloadUrl": "https://github.com/TopShelfCraft/SuperSort/archive/1.1.0.zip",
+    "date": "2015-11-05T13:35:00",
+    "notes": [
+      "[Added] Added the `shuffle` method."
+    ]
+  },
+  {
+    "version": "1.0.0",
+    "downloadUrl": "https://github.com/TopShelfCraft/SuperSort/archive/1.0.0.zip",
+    "date": "2015-11-05T13:11:00",
+    "notes": [
+      "[Fixed] Fixed a bug where the `rsortas` method was erroneously set to sort the source array rather than the transformed `asArray`, causing incorrect results."
+    ]
+  },
+  {
+    "version": "0.0.1",
+    "downloadUrl": "https://github.com/TopShelfCraft/SuperSort/archive/0.0.1.zip",
+    "date": "2015-0124T08:42:00",
+    "notes": [
+      "[Added] Beta release."
+    ]
+  }
+]
