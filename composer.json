@@ -1,0 +1,44 @@
+{
+    "name": "topshelfcraft/supersort",
+    "description": "TODO",
+    "type": "craft-plugin",
+    "version": "2.0.0",
+    "keywords": [
+        "craft",
+        "cms",
+        "craftcms",
+        "craft-plugin",
+        "SuperSort"
+    ],
+    "authors": [
+        {
+            "name": "Michael Rog",
+            "homepage": "https://michaelrog.com"
+        },
+        {
+            "name": "TJ Draper",
+            "homepage": "https://buzzingpixel.com"
+        }
+    ],
+    "repositories": [
+        {
+            "type": "composer",
+            "url": "https://asset-packagist.org"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "topshelfcraft\\supersort\\": "src/"
+        }
+    },
+    "extra": {
+        "name": "SuperSort",
+        "handle": "supersort",
+        "developer": "Michael Rog",
+        "developerUrl": "https://buzzingpixel.com",
+        "schemaVersion": "0.0.0.0",
+        "hasCpSettings": false,
+        "hasCpSection": false,
+        "class": "topshelfcraft\\supersort\\SuperSort"
+    }
+}
