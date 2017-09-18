@@ -1,0 +1,55 @@
+{
+    "name": "topshelfcraft/supersort",
+    "description": "A super-duper sorting filter for your CraftCMS templates",
+    "type": "craft-plugin",
+    "version": "2.0.0",
+    "support": {
+        "docs": "https://github.com/TopShelfCraft/SuperSort"
+    },
+    "keywords": [
+        "craft",
+        "cms",
+        "craftcms",
+        "craft-plugin",
+        "SuperSort"
+    ],
+    "authors": [
+        {
+            "name": "Michael Rog",
+            "homepage": "https://michaelrog.com"
+        },
+        {
+            "name": "TJ Draper",
+            "homepage": "https://buzzingpixel.com"
+        }
+    ],
+    "repositories": [
+        {
+            "type": "composer",
+            "url": "https://asset-packagist.org"
+        }
+    ],
+    "require": {
+        "php": ">=7.0.0",
+        "craftcms/cms": "^3.0.0-beta.28",
+        "vlucas/phpdotenv": "^2.4.0",
+        "roave/security-advisories": "dev-master"
+    },
+    "autoload": {
+        "psr-4": {
+            "topshelfcraft\\supersort\\": "src/"
+        }
+    },
+    "extra": {
+        "name": "SuperSort",
+        "handle": "supersort",
+        "developer": "Top Shelf Craft",
+        "developerUrl": "https://topshelfcraft.com",
+        "schemaVersion": "0.0.0.0",
+        "hasCpSettings": false,
+        "hasCpSection": false,
+        "class": "topshelfcraft\\supersort\\SuperSort",
+        "changelogUrl": "https://github.com/TopShelfCraft/SuperSort/raw/master/CHANGELOG.md",
+        "downloadUrl": "https://github.com/TopShelfCraft/SuperSort/releases"
+    }
+}
