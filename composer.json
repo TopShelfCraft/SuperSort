@@ -1,6 +1,6 @@
 {
     "name": "topshelfcraft/supersort",
-    "description": "TODO",
+    "description": "A super-duper sorting filter for your CraftCMS templates",
     "type": "craft-plugin",
     "version": "2.0.0",
     "keywords": [
@@ -35,7 +35,7 @@
         "name": "SuperSort",
         "handle": "supersort",
         "developer": "Michael Rog",
-        "developerUrl": "https://buzzingpixel.com",
+        "developerUrl": "https://michaelrog.com",
         "schemaVersion": "0.0.0.0",
         "hasCpSettings": false,
         "hasCpSection": false,
