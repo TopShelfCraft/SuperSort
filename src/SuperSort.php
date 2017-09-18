@@ -2,6 +2,7 @@
 
 namespace topshelfcraft\supersort;
 
+use Craft;
 use craft\base\Plugin;
 
 /**
@@ -22,5 +23,10 @@ class SuperSort extends Plugin
 
         // Save an instance of this plugin for easy reference throughout app
         self::$plugin = $this;
+
+        // Add the twig extension
+        Craft::$app->view->twig->addExtension(
+            new SuperSortTwigExtension()
+        );
     }
 }
