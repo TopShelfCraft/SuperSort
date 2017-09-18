@@ -2,6 +2,9 @@
 
 namespace topshelfcraft\supersort;
 
+use Craft;
+use craft\elements\db\ElementQuery;
+
 /**
  * Class SuperSortTwigExtension
  */
@@ -48,9 +51,10 @@ class SuperSortTwigExtension extends \Twig_Extension
      * Super sort
      * @param $array
      * @param string $method
-     * @param bool $as
+     * @param bool|string $as
      * @param int $sortFlag
      * @return array
+     * @throws \Exception
      */
     public function superSort(
         $array,
@@ -63,34 +67,36 @@ class SuperSortTwigExtension extends \Twig_Extension
 
         $method = strtolower($method);
 
-        $asMethods = array('sortas', 'rsortas', 'natcasesortas', 'natsortas');
+        $asMethods = [
+            'sortas',
+            'rsortas',
+            'natcasesortas',
+            'natsortas'
+        ];
+
         $usingAsMethod = in_array($method, $asMethods, false);
 
         if (! is_array($array)) {
             // TODO: Add better handling for other types of objects
 
-            // TODO: figure out if we still need to do any of this with Craft 3
-            // if ($array instanceof ElementCriteriaModel) {
-            //     $array = $array->find();
-            // }  else {
-            //     $array = array();
-            // }
+            $newArray = array();
 
-            $array = array();
+            if ($array instanceof ElementQuery) {
+                $newArray = $array->all();
+            }
 
+            $array = $newArray;
         }
 
-        if (empty($as) or ! is_string($as)) {
+        if (empty($as) || ! is_string($as)) {
             $as = '';
         }
 
         if ($usingAsMethod) {
-
             $asArray = $array;
 
             foreach ($array as $k => $v) {
-                // TODO: craft() is not a thing anymore
-                $asArray[$k] = craft()->templates->renderObjectTemplate($as, $v);
+                $asArray[$k] = Craft::$app->view->renderObjectTemplate($as, $v);
             }
         }
 
