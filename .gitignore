@@ -1,47 +1,30 @@
-#------------------------------------
-    # Project
-#------------------------------------
 
-# Project custom ignores
-
-
-
-
-
-#------------------------------------
-    # Tools
-#------------------------------------
+# --- Ignore workflow metadata
 
 .env
-configLocal.json
-localStorage/*
-!localStorage/dbBackups
-localStorage/dbBackups/*
 bower_components/
 node_modules/
 out/
+.*~
 .bundle
 .idea/
 .komodotools
 .project
+.sass-cache
 .settings/
 .tern-project
 .tmproj
 *.esproj
 *.komodoproject
 *.sublime-*
+*.swp
 browserstack.js
 codekit-config.json
 mixture.json
+npm-debug.log
 prepros.json
 
-
-
-
-
-#------------------------------------
-    # System
-#------------------------------------
+# --- Ignore system cruft
 
 .cache
 .DS_Store
@@ -60,12 +43,7 @@ Homestead.yaml
 vendor/*
 *.vagrant
 
+# --- Include .gitignore directives
 
-
-
-
-#------------------------------------
-    # Gitkeep
-#------------------------------------
-
-!.gitkeep
+!.gitignore
+!*/.gitignore

@@ -1,22 +1,26 @@
 {
     "name": "topshelfcraft/supersort",
-    "description": "A super-duper sorting filter for your CraftCMS templates",
+    "description": "...a super-duper sorting function for your Craft templates.",
     "type": "craft-plugin",
-    "version": "2.0.0",
-    "support": {
-        "docs": "https://github.com/TopShelfCraft/SuperSort"
-    },
+    "version": "3.0.1",
     "keywords": [
         "craft",
         "cms",
         "craftcms",
         "craft-plugin",
-        "SuperSort"
+        "SuperSort",
+        "sort",
+        "sorting",
+        "array",
+        "list"
     ],
+    "support": {
+        "docs": "https://github.com/TopShelfCraft/SuperSort"
+    },
     "authors": [
         {
-            "name": "Michael Rog",
-            "homepage": "https://michaelrog.com"
+            "name": "Top Shelf Craft (Michael Rog)",
+            "homepage": "https://topshelfcraft.com"
         },
         {
             "name": "TJ Draper",
@@ -30,10 +34,7 @@
         }
     ],
     "require": {
-        "php": ">=7.0.0",
-        "craftcms/cms": "^3.0.0-beta.28",
-        "vlucas/phpdotenv": "^2.4.0",
-        "roave/security-advisories": "dev-master"
+        "craftcms/cms": "^3.0.0-RC3"
     },
     "autoload": {
         "psr-4": {
@@ -43,13 +44,15 @@
     "extra": {
         "name": "SuperSort",
         "handle": "supersort",
-        "developer": "Top Shelf Craft",
+        "developer": "Top Shelf Craft (Michael Rog)",
         "developerUrl": "https://topshelfcraft.com",
         "schemaVersion": "0.0.0.0",
         "hasCpSettings": false,
         "hasCpSection": false,
-        "class": "topshelfcraft\\supersort\\SuperSort",
         "changelogUrl": "https://github.com/TopShelfCraft/SuperSort/raw/master/CHANGELOG.md",
-        "downloadUrl": "https://github.com/TopShelfCraft/SuperSort/releases"
+        "components": {
+            "sorter": "topshelfcraft\\supersort\\services\\Sorter"
+        },
+        "class": "topshelfcraft\\supersort\\SuperSort"
     }
 }

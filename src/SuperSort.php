@@ -1,32 +1,57 @@
 <?php
+/**
+ * SuperSort
+ *
+ * @author     Michael Rog <michael@michaelrog.com>
+ * @link       https://topshelfcraft.com
+ * @copyright  Copyright 2017, Michael Rog
+ * @see        https://github.com/topshelfcraft/SuperSort
+ */
 
 namespace topshelfcraft\supersort;
 
 use Craft;
 use craft\base\Plugin;
+use topshelfcraft\supersort\services\Sorter;
+
 
 /**
- * Class SuperSort
+ * @author   Michael Rog <michael@michaelrog.com>
+ * @package  SuperSort
+ * @since    3.0.0
+ *
+ * @property  Sorter $sorter
  */
 class SuperSort extends Plugin
 {
-    /** @var SuperSort $plugin */
-    public static $plugin;
+
+
+	/*
+	 * Static properties
+	 */
 
     /**
-     * Initialize plugin
-     */
+	 * @var SuperSort $plugin
+	 */
+    public static $plugin;
+
+
+	/*
+	 * Public methods
+	 */
+
+	/**
+	 * Initializes the plugin, sets its static self-reference, and registers the Twig extension.
+	 */
     public function init()
     {
-        // Make sure parent init functionality runs
-        parent::init();
 
-        // Save an instance of this plugin for easy reference throughout app
-        self::$plugin = $this;
+		parent::init();
+		self::$plugin = $this;
 
-        // Add the twig extension
-        Craft::$app->view->twig->addExtension(
-            new SuperSortTwigExtension()
-        );
+		Craft::$app->getView()->registerTwigExtension(new SuperSortTwigExtension());
+
     }
+
+
 }
