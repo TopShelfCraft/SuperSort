@@ -16,6 +16,12 @@ Using **SuperSort**'s "sort as" methods, you can sort an array of elements by an
 
 ## Usage
 
+### Installation
+
+`composer require topshelfcraft/supersort`
+
+### General usage
+
 Use the `supersort` filter to sort an array of objects.
 
 (You can apply `supersort` to any array or *ElementCriteriaModel*. A non-array-like source will be converted into an empty array... which probably isn't very useful for sorting.)
@@ -75,7 +81,7 @@ If you don't supply this third parameter, the default (`SORT_REGULAR`) flag is u
 
 ### What are the system requirements?
 
-Craft 2.5+ and PHP 5.4+
+Craft 3.0+ and PHP 7.0+
 
 
 ### I found a bug.
