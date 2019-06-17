@@ -69,9 +69,9 @@ You can also sort by one of **SuperSort**'s custom methods:
 
 To use these methods, you will provide a second parameter, which is a Twig object template to [render](https://docs.craftcms.com/api/v3/craft-web-view.html#renderObjectTemplate()-detail) using each object in the array:
 
-    {% upcomingEvents | supersort('sortAs', '{eventDates.first.date}') %}
+    {% set upcomingEvents = upcomingEvents | supersort('sortAs', '{eventDates.first.date}') %}
 
-    {% upcomingEvents | supersort('sortAs', '{{ object.eventDates.first.date }}') %}
+    {% set upcomingEvents = upcomingEvents | supersort('sortAs', '{{ object.eventDates.first.date }}') %}
 
 (This "object template" syntax is the same as you might use to define a [Dynamic Subfolder Path](http://buildwithcraft.com/docs/assets-fields#dynamic-subfolder-paths) for an Assets field.
 
@@ -80,9 +80,9 @@ To use these methods, you will provide a second parameter, which is a Twig objec
 
 You can optionally provide a third parameter &mdash; one of PHP's [sort flags](http://php.net/manual/en/function.sort.php).
 
-    {% source | supersort('sortAs', '{foo}', SORT_NUMERIC) %}
+    {% set source = source | supersort('sortAs', '{foo}', SORT_NUMERIC) %}
 
-    {% source | supersort('asort', null, SORT_NUMERIC) %}
+    {% set source = source | supersort('asort', null, SORT_NUMERIC) %}
 
 If you don't supply this third parameter, the default (`SORT_REGULAR`) flag is used.
 
