@@ -92,7 +92,7 @@ If you don't supply this third parameter, the default (`SORT_REGULAR`) flag is u
 If you'd like to use the `superSort()` method as a helper in another Craft plugin or component, you can access it in PHP directly from the Sorter service:
 
 ```php
-$result = SuperSort::$plugin->sorter->superSort($array, $method, $as, $sortFlag);
+$result = Sorter::superSort($array, $method, $as, $sortFlag);
 ``` 
 
 (Note: [PHP's built-in sort methods](http://php.net/manual/en/array.sorting.php) sort an array in place and return a _boolean_ representing success. The `superSort()` method, by contrast, returns the result _array_.)

@@ -10,13 +10,16 @@
 
 namespace topshelfcraft\supersort;
 
+use Twig\Extension\AbstractExtension;
+use Twig\TwigFilter;
+use Twig\TwigFunction;
 
 /**
  * @author   Michael Rog <michael@michaelrog.com>
  * @package  SuperSort
  * @since    3.0.0
  */
-class SuperSortTwigExtension extends \Twig_Extension
+class SuperSortTwigExtension extends AbstractExtension
 {
 
     /**
@@ -27,24 +30,20 @@ class SuperSortTwigExtension extends \Twig_Extension
         return 'SuperSort';
     }
 
-
-	/*
-	 * Public methods
-	 */
-
     /**
      * @return array
      */
     public function getFilters()
     {
         return [
-            'supersort' => new \Twig_Filter(
-                'supersort',
-                [
-                    SuperSort::$plugin->sorter,
-                    'superSort'
-                ]
-            )
+            'supersort' => new TwigFilter('supersort', [Sorter::class, 'superSort'])
+        ];
+    }
+
+    public function getFunctions()
+    {
+        return [
+            'supersort' => new TwigFunction('supersort', [Sorter::class, 'superSort'])
         ];
     }
 

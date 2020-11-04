@@ -2,7 +2,7 @@
     "name": "topshelfcraft/supersort",
     "description": "...a super-duper sorting function for your Craft templates.",
     "type": "craft-plugin",
-    "version": "3.0.1",
+    "version": "3.1.0",
     "keywords": [
         "craft",
         "cms",
@@ -34,7 +34,8 @@
         }
     ],
     "require": {
-        "craftcms/cms": "^3.0.0-RC3"
+        "craftcms/cms": "^3.0",
+        "topshelfcraft/ranger": "^3.0"
     },
     "autoload": {
         "psr-4": {
@@ -46,13 +47,7 @@
         "handle": "supersort",
         "developer": "Top Shelf Craft (Michael Rog)",
         "developerUrl": "https://topshelfcraft.com",
-        "schemaVersion": "0.0.0.0",
-        "hasCpSettings": false,
-        "hasCpSection": false,
         "changelogUrl": "https://github.com/TopShelfCraft/SuperSort/raw/master/CHANGELOG.md",
-        "components": {
-            "sorter": "topshelfcraft\\supersort\\services\\Sorter"
-        },
         "class": "topshelfcraft\\supersort\\SuperSort"
     }
 }
