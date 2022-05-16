@@ -22,10 +22,10 @@ class SuperSort extends Plugin
 	/**
 	 * Initializes the plugin and registers the Twig extension.
 	 */
-    public function init()
-    {
+	public function init()
+	{
 
-    	$this->setComponents([
+		$this->setComponents([
 			'sorter' => Sorter::class,
 		]);
 
@@ -33,6 +33,6 @@ class SuperSort extends Plugin
 
 		Craft::$app->getView()->registerTwigExtension(new SuperSortTwigExtension());
 
-    }
+	}
 
 }
