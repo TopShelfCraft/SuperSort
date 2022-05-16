@@ -30,7 +30,7 @@ Or, if you're feeling frisky, you can install **SuperSort** via [Composer](https
 
 Use the `supersort` filter to sort an array of objects.
 
-(You can apply `supersort` to any array or *ElementQuery*. A non-array-like source will be converted into an empty array... which probably isn't very useful for sorting.)
+(You can apply `supersort` to any array or _ElementQuery_. A non-array-like source will be converted into a single-item array... which probably isn't very useful for sorting.)
 
 
 ### Basic Sorting
@@ -92,7 +92,7 @@ If you don't supply this third parameter, the default (`SORT_REGULAR`) flag is u
 If you'd like to use the `superSort()` method as a helper in another Craft plugin or component, you can access it in PHP directly from the Sorter service:
 
 ```php
-$result = Sorter::superSort($array, $method, $as, $sortFlag);
+$result = Sorter::superSort($array, $method, $as, $sortFlag, $comp);
 ``` 
 
 (Note: [PHP's built-in sort methods](http://php.net/manual/en/array.sorting.php) sort an array in place and return a _boolean_ representing success. The `superSort()` method, by contrast, returns the result _array_.)
@@ -104,7 +104,7 @@ $result = Sorter::superSort($array, $method, $as, $sortFlag);
 
 ### What are the system requirements?
 
-Craft 3.0+ and PHP 7.0+
+Craft 4.0+ and PHP 8.0+
 
 
 ### I found a bug.
@@ -114,7 +114,7 @@ Nah...
 
 ### I triple-checked. It's a bug.
 
-Well, alright. Please open a GitHub Issue, submit a PR to the `3.x.dev` branch, or just email me to let me know.
+Well, alright. Please open a GitHub Issue, or submit a PR to the `4.x.dev` branch.
 
 
 * * *

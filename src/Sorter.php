@@ -1,51 +1,43 @@
 <?php
-/**
- * SuperSort
- *
- * @author     Michael Rog <michael@michaelrog.com>
- * @link       https://topshelfcraft.com
- * @copyright  Copyright 2017, Michael Rog
- * @see        https://github.com/topshelfcraft/SuperSort
- */
-
-namespace topshelfcraft\supersort;
+namespace TopShelfCraft\SuperSort;
 
 use Craft;
 use craft\base\Component;
 use craft\elements\db\ElementQuery;
 use yii\base\InvalidArgumentException;
 
-/**
- * @author   Michael Rog <michael@michaelrog.com>
- * @package  SuperSort
- * @since    3.0.0
- */
 class Sorter extends Component
 {
 
-    /**
-     * @param array|ElementQuery $array
-     * @param string $method
-     * @param string|null $as
-     * @param int $sortFlag
-     * @param array $comp
-     *
-     * @return array
-     *
-     * @throw \Exception
-     */
-	public static function superSort($array, $method = 'asort', $as = null, $sortFlag = SORT_REGULAR, $comp = [])
+	/**
+	 * @param array|ElementQuery $array
+	 * @param string $method
+	 * @param string|null $as
+	 * @param int|null $sortFlag
+	 * @param array $comp
+	 *
+	 * @return array
+	 *
+	 * @throw \Exception
+	 */
+	public static function superSort(
+		$array,
+		string $method = 'asort',
+		?string $as = null,
+		?int $sortFlag = SORT_REGULAR,
+		array $comp = []
+	): array
     {
 
 		$method = strtolower($method);
 
 		// Normalize the source array.
-
-		if (! is_array($array)) {
+		if (!is_array($array)) {
 
 			// TODO: Add better handling for other types of objects (e.g. Arrayables, Collections)
 
-			if ($array instanceof ElementQuery) {
+			if ($array instanceof ElementQuery)
+			{
 				$array = $array->all();
 			}
 			else
@@ -119,7 +111,7 @@ class Sorter extends Component
 
 	}
 
-	public static function sortAs($array, $method = 'sortas', $as = null, $sortFlag = SORT_REGULAR, $comp = [])
+	public static function sortAs($array, string $method = 'sortas', ?string $as = null, ?int $sortFlag = SORT_REGULAR, array $comp = []): array
     {
 
         $originalArray = $array;
@@ -184,13 +176,8 @@ class Sorter extends Component
      * Sorts an array by custom order provided in archetype.
      *
      * Items which do not appear in the archetype list appear at end of the list, in their original relative order.
-     *
-     * @param array $array
-     * @param array $archetype
-     *
-     * @return array
      */
-    public static function sortByCustomOrder($array, $archetype = [])
+    public static function sortByCustomOrder(array $array, array $archetype = []): array
     {
 
         // Take values from archetype array and flip them with numeric order values.
@@ -221,13 +208,8 @@ class Sorter extends Component
 
     /**
      * @internal Used for testing the `uasort` and `uasortas` methods.
-     *
-     * @param $a
-     * @param $b
-     *
-     * @return int
      */
-    public static function __test_numericFirst($a, $b)
+    public static function __test_numericFirst($a, $b): int
     {
         return is_numeric($a) ? -1 : (int) is_numeric($b);
     }

@@ -1,10 +1,17 @@
 # SuperSort Changelog
 
-_...a super-duper sorting function for your Craft templates._
+The format of this file is based on ["Keep a Changelog"](http://keepachangelog.com/). This project adheres to [Semantic Versioning](http://semver.org/). Version numbers follow the pattern: `MAJOR.FEATURE.BUGFIX`
 
-The format of this file is based on ["Keep a Changelog"](http://keepachangelog.com/).
 
-This project adheres to [Semantic Versioning](http://semver.org/). Version numbers follow the pattern: `MAJOR.FEATURE.BUILD`
+## 4.0.0 - 2022-05-15
+
+### Improved
+
+- SuperSort is ready for Craft 4!
+
+### Removed
+
+- Removed `SuperSort::$plugin` static accessor; use `getInstance()` instead.
 
 
 ## 3.0.1 - 2017-12-25

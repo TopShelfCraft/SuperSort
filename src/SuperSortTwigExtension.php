@@ -1,46 +1,26 @@
 <?php
-/**
- * SuperSort
- *
- * @author     Michael Rog <michael@michaelrog.com>
- * @link       https://topshelfcraft.com
- * @copyright  Copyright 2017, Michael Rog
- * @see        https://github.com/topshelfcraft/SuperSort
- */
-
-namespace topshelfcraft\supersort;
+namespace TopShelfCraft\SuperSort;
 
 use Twig\Extension\AbstractExtension;
 use Twig\TwigFilter;
 use Twig\TwigFunction;
 
-/**
- * @author   Michael Rog <michael@michaelrog.com>
- * @package  SuperSort
- * @since    3.0.0
- */
 class SuperSortTwigExtension extends AbstractExtension
 {
 
-    /**
-     * @return string
-     */
-    public function getName()
+    public function getName(): string
     {
         return 'SuperSort';
     }
 
-    /**
-     * @return array
-     */
-    public function getFilters()
+    public function getFilters(): array
     {
         return [
             'supersort' => new TwigFilter('supersort', [Sorter::class, 'superSort'])
         ];
     }
 
-    public function getFunctions()
+    public function getFunctions(): array
     {
         return [
             'supersort' => new TwigFunction('supersort', [Sorter::class, 'superSort'])

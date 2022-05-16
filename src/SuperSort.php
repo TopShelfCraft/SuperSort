@@ -1,79 +1,35 @@
 <?php
-/**
- * SuperSort
- *
- * @author     Michael Rog <michael@michaelrog.com>
- * @link       https://topshelfcraft.com
- * @copyright  Copyright 2017, Michael Rog
- * @see        https://github.com/topshelfcraft/SuperSort
- */
-
-namespace topshelfcraft\supersort;
+namespace TopShelfCraft\SuperSort;
 
 use Craft;
-use craft\base\Plugin as BasePlugin;
-use topshelfcraft\ranger\Plugin;
+use TopShelfCraft\base\Plugin;
 
 /**
- * @author   Michael Rog <michael@michaelrog.com>
- * @package  SuperSort
- * @since    3.0.0
+ * @author Michael Rog <michael@michaelrog.com>
+ * @link https://topshelfcraft.com
+ * @copyright Copyright 2022, Top Shelf Craft (Michael Rog)
  *
- * @property  Sorter $sorter
+ * @property Sorter $sorter
  */
-class SuperSort extends BasePlugin
+class SuperSort extends Plugin
 {
 
-    /**
-     * @var bool
-     */
-    public $hasCpSettings = false;
-
-    /**
-     * @var bool
-     */
-    public $hasCpSection = false;
-
-    /**
-     * @var string
-     */
-    public $schemaVersion = '0.0.0.0';
-
-    /**
-	 * @var SuperSort $plugin
-     *
-     * @deprecated Use `getInstance()` instead.
-     * @todo Remove in 4.0
-	 */
-    public static $plugin;
-
-    /**
-     * @param $id
-     * @param null $parent
-     * @param array $config
-     */
-    public function __construct($id, $parent = null, array $config = [])
-    {
-
-        $config['components'] = [
-            'sorter' => Sorter::class,
-        ];
-
-        parent::__construct($id, $parent, $config);
-
-    }
+	public ?string $changelogUrl = "https://raw.githubusercontent.com/TopShelfCraft/SuperSort/master/CHANGELOG.md";
+	public bool $hasCpSection = false;
+	public bool $hasCpSettings = false;
+	public string $schemaVersion = "0.0.0.0";
 
 	/**
-	 * Initializes the plugin, sets its static self-reference, and registers the Twig extension.
+	 * Initializes the plugin and registers the Twig extension.
 	 */
     public function init()
     {
 
-		parent::init();
-		Plugin::watch($this);
+    	$this->setComponents([
+			'sorter' => Sorter::class,
+		]);
 
-		// TODO: Remove in 4.0.
-		self::$plugin = $this;
+		parent::init();
 
 		Craft::$app->getView()->registerTwigExtension(new SuperSortTwigExtension());
 
