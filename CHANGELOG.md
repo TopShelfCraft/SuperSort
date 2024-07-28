@@ -3,6 +3,13 @@
 The format of this file is based on ["Keep a Changelog"](http://keepachangelog.com/). This project adheres to [Semantic Versioning](http://semver.org/). Version numbers follow the pattern: `MAJOR.FEATURE.BUGFIX`
 
 
+## 5.0.0 - 2024-07-28
+
+### Improved
+
+- SuperSort is ready for Craft 5! (Thanks to T. Van Doren!)
+
+
 ## 4.0.0 - 2022-05-15
 
 ### Improved
