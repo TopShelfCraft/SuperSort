@@ -87,6 +87,22 @@ You can optionally provide a third parameter &mdash; one of PHP's [sort flags](h
 If you don't supply this third parameter, the default (`SORT_REGULAR`) flag is used.
 
 
+### Custom-Order Sorting via Archetype
+
+The custom-order methods sort an array by custom order provided in an archetype.
+
+- `'customOrderSort'`
+- `'customOrderKsort'`
+
+To use these methods, you will provide an archetype (exemplar) list via the `comp` parameter:
+
+    {% set upcomingEvents = upcomingEvents | supersort('customOrderSort', comp: ['Value1', 'Value2']) %}
+
+    {% set upcomingEvents = upcomingEvents | supersort('customOrderKsort', comp: ['key1', 'key2']) %}
+
+Items which do not appear in the archetype list appear at end of the list, in their original relative order.
+
+
 ### Using SuperSort as a PHP helper
 
 If you'd like to use the `superSort()` method as a helper in another Craft plugin or component, you can access it in PHP directly from the Sorter service:
@@ -104,7 +120,7 @@ $result = Sorter::superSort($array, $method, $as, $sortFlag, $comp);
 
 ### What are the system requirements?
 
-Craft 4.0+ and PHP 8.0+
+Craft 5.0+ and PHP 8.0+
 
 
 ### I found a bug.
@@ -114,7 +130,7 @@ Nah...
 
 ### I triple-checked. It's a bug.
 
-Well, alright. Please open a GitHub Issue, or submit a PR to the `4.x.dev` branch.
+Well, alright. Please open a GitHub Issue, or submit a PR to the `5.x.dev` branch.
 
 
 * * *

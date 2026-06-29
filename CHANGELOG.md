@@ -2,13 +2,18 @@
 
 The format of this file is based on ["Keep a Changelog"](http://keepachangelog.com/). This project adheres to [Semantic Versioning](http://semver.org/). Version numbers follow the pattern: `MAJOR.FEATURE.BUGFIX`
 
+## 5.1.0 - 2026-06-27
+
+### Added
+
+- Added `customOrderSort` for sorting an array using a given example order.
+- Added `customOrderKsort` for sorting an array by its keys, using a given example order.
 
 ## 5.0.0 - 2024-07-28
 
 ### Improved
 
 - SuperSort is ready for Craft 5! (Thanks to T. Van Doren!)
-
 
 ## 4.0.0 - 2022-05-15
 
@@ -19,7 +24,6 @@ The format of this file is based on ["Keep a Changelog"](http://keepachangelog.c
 ### Removed
 
 - Removed `SuperSort::$plugin` static accessor; use `getInstance()` instead.
-
 
 ## 3.0.1 - 2017-12-25
 

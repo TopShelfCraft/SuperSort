@@ -97,6 +97,9 @@ class Sorter extends Component
 			case 'customordersort':
 				return static::sortByCustomOrder($array, $comp);
 
+			case 'customorderksort':
+				return static::ksortByCustomOrder($array, $comp);
+
 			case 'natcasesortas':
 			case 'natsortas':
 			case 'rsortas':
@@ -204,6 +207,21 @@ class Sorter extends Component
 
 		return $array;
 
+	}
+
+	/**
+	 * Key-sorts an array by custom order provided in archetype.
+	 *
+	 * Items whose keys do not appear in the archetype list appear at end of the list, in their original relative order.
+	 */
+	public static function ksortByCustomOrder(array $array, array $archetype = []): array
+	{
+		return array_flip(
+			self::sortByCustomOrder(
+				array_flip($array),
+				$archetype,
+			)
+		);
 	}
 
 	/**
